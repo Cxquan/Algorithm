@@ -25,7 +25,7 @@ public class InversionCount {
 		BigInteger rc = sort_and_count(rawList, 0, rawList.size()-1, sortedList);
 		long time = System.currentTimeMillis() - start;
 		doExportResult(args[1], rc, sortedList, time);
-		String tmp = "\n\nFinished counting with sort_and_count! \n"
+		String tmp = "\nFinished counting with sort_and_count! \n"
 				+ "RC = " + rc + ";  timecost = " + time + " millisecond.  "
 				+ "Result is stored at " + args[1];
 		System.out.print(tmp);
@@ -163,7 +163,7 @@ public class InversionCount {
 			reader = new BufferedReader(new FileReader(file));
 			String line = null;
 			while ((line = reader.readLine()) != null) {
-				if ((line=line.trim()) == "") {
+				if ((line=line.trim()).isEmpty()) {
 					continue;
 				}
 				Integer num = Integer.valueOf(line);
