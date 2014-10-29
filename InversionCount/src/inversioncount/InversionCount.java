@@ -35,7 +35,7 @@ public class InversionCount {
 		rc = quick_sort_Count(rawList, 0, rawList.size()-1);
 		time = System.currentTimeMillis() - start;
 		doExportResult(args[2], rc, rawList, time);
-		tmp = "\n\nFinished counting with sort_and_count! \n"
+		tmp = "\n\nFinished counting with quick_sort_count! \n"
 				+ "RC = " + rc + ";  timecost = " + time + " millisecond.  "
 				+ "Result is stored at " + args[2];
 		System.out.print(tmp);
@@ -133,7 +133,7 @@ public class InversionCount {
 					rc = rc.add(BigInteger.valueOf(rrList.size()).add(BigInteger.ONE));
 				}
 			}
-		}		
+		}
 		rc = rc.add(BigInteger.valueOf(lrList.size()*rlList.size()));
 		// merge
 		int k = low;
