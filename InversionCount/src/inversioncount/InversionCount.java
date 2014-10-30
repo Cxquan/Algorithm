@@ -186,7 +186,7 @@ public class InversionCount {
 		if (args.length != 3) {
 			System.err.printf("!!!bad arguements!!!\nThere should be 3 arguements"
 					+ "like £º\n     <path_of_input_file> <path_of_result_file_for_sortAndCount>"
-					+ "<path_of_result_file_for_quickSortCount>\n");
+					+ " <path_of_result_file_for_quickSortCount>\n");
 			return false;
 		}
 		File tmpFile = new File(args[0]);
@@ -229,7 +229,5 @@ public class InversionCount {
 				e2.printStackTrace();
 			}
 		}
-	} 
-
-
+	}
 }

@@ -1,4 +1,4 @@
-package inversioncount;
+package closestpair;
 
 public class ChgInteger {
 	Integer integer;
