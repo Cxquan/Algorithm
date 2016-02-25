@@ -1,4 +1,4 @@
-package com.cxquan.datastructure;
+package com.cxquan.small.datastructure;
 
 
 public class PriorityQueue {
