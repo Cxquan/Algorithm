@@ -1,6 +1,6 @@
-package cxq.aimatoffer.question8.minnumberinrotatearray;
+package cxq.aimatoffer.question8.rotatearray;
 
-public class MinNumberInRotateArray {
+public class RotateArray {
     public static int getMinInRotateArray(int[] array) throws Exception {
         if (array == null || array.length == 0) {
             throw new Exception("invalid arguements");
@@ -28,7 +28,7 @@ public class MinNumberInRotateArray {
                 throw new Exception("invalid arguements");
             }
         }
-        return array[right] < array[left] ? array[right] : array[left]; 
+        return array[right] < array[left] ? array[right] : array[left]; // 全部升序情况
     }
     
     private static int min(int[] array) {
@@ -49,7 +49,7 @@ public class MinNumberInRotateArray {
 //        {1, 1, 1, 0, 1, 1};
         int min;
         try {
-            min = MinNumberInRotateArray.getMinInRotateArray(array);
+            min = RotateArray.getMinInRotateArray(array);
             System.out.println(min);
         } catch (Exception e) {
             e.printStackTrace();
