@@ -2,7 +2,11 @@ package cxq.aimatoffer.question13.dellistnode;
 
 public class DelListNode {
     public static void delNode(ListNode head, ListNode node) {
-        if (node.next == null) {
+        if (head == node) { // 头结点！
+            System.out.println("ERROR: Java 函数里无法删除对参数指向的对象");
+            return;
+        }
+        if (node.next == null) { // 尾节点
             while (head.next != node) {
                 head = head.next;
             }
@@ -17,14 +21,14 @@ public class DelListNode {
     // for test
     public static void main(String[] args) {
         ListNode head = new ListNode(0);
-        ListNode node = head;
-        for (int i = 1; i < 10; i++) {
-            node.next = new ListNode(i);
-            node = node.next;
-        }
+//        ListNode node = head;
+//        for (int i = 1; i < 1; i++) {
+//            node.next = new ListNode(i);
+//            node = node.next;
+//        }
         
-        ListNode node2del = node;
-        DelListNode.delNode(head, node2del);
+//        ListNode node2del = node;
+        DelListNode.delNode(head, head);
         
         while (head != null) {
             System.out.println(head.value);
