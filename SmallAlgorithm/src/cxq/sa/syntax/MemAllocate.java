@@ -1,4 +1,4 @@
-package cxq.sa.test;
+package cxq.sa.syntax;
 
 import java.util.List;
 import java.util.Map;

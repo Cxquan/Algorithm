@@ -8,11 +8,12 @@ import java.util.List;
  * 不是严格意义上的生产者消费者，生产者遇到满仓没有等待而是退出，并且每次调用都需要先获取锁，不管算仓库里是否是空的还是满的
  * 并且，线程只有在等待锁
  */
-public class SyncWarehouse {
+@Deprecated
+public class SyncWarehouseDeprecated {
     final int MAX_SIZE = 3;
     private List<Boolean> warehouse = new LinkedList<Boolean>();
     
-    public SyncWarehouse() {}
+    public SyncWarehouseDeprecated() {}
     
     public void put(int num) {
         if (num <= 0) {
@@ -48,9 +49,9 @@ public class SyncWarehouse {
         private int num = 1;
         // 其实内部类可直接通过SyncWarehouse.this获取到外围对象(参考Consumer的实现)，但是本题只是为了方便写成内部类
         // 实际上Producer/Consumer和Warehouse应该是分开的三个类
-        final private SyncWarehouse swh;
+        final private SyncWarehouseDeprecated swh;
 
-        public Producer(SyncWarehouse swh, int num) {
+        public Producer(SyncWarehouseDeprecated swh, int num) {
             this.swh = swh;
             this.num = num;
         }
@@ -84,7 +85,7 @@ public class SyncWarehouse {
         public void run() {
             while (true) {
                 // 内部类访问外围类对象的实现方式
-                SyncWarehouse.this.get(num);
+                SyncWarehouseDeprecated.this.get(num);
                 try {
                     sleep(2000);
                 } catch (InterruptedException e) {
@@ -95,11 +96,11 @@ public class SyncWarehouse {
     }
     
     static public void main(String[] args) {
-        SyncWarehouse wn = new SyncWarehouse();
-        SyncWarehouse.Producer p1 = wn.new Producer(wn, 1);
-        SyncWarehouse.Consumer c1 = wn.new Consumer(1);
-        SyncWarehouse.Producer p2 = wn.new Producer(wn, 1);
-        SyncWarehouse.Consumer c2 = wn.new Consumer(1);
+        SyncWarehouseDeprecated wn = new SyncWarehouseDeprecated();
+        SyncWarehouseDeprecated.Producer p1 = wn.new Producer(wn, 1);
+        SyncWarehouseDeprecated.Consumer c1 = wn.new Consumer(1);
+        SyncWarehouseDeprecated.Producer p2 = wn.new Producer(wn, 1);
+        SyncWarehouseDeprecated.Consumer c2 = wn.new Consumer(1);
         p1.start();
         c1.start();
         p2.start();

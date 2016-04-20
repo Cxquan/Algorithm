@@ -1,4 +1,4 @@
-package cxq.sa.dynamic;
+package cxq.sa.dynamicprogram;
 
 public class BagProblem {
   //01背包,要打印结果

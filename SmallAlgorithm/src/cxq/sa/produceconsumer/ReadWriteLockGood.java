@@ -35,7 +35,7 @@ public class ReadWriteLockGood<E> {
         readLock.lock();
         try
         {
-                        System.out.println("Printing elements by thread"+Thread.currentThread().getName());
+            System.out.println("Printing elements by thread"+Thread.currentThread().getName());
             return list.get(i);
         }
         finally
