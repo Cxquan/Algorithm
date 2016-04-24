@@ -4,7 +4,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.Stack;
 
-public class Algori {
+public class StringProcess {
 
 	// 反转字符串
 	public static String reverseString(String string) {

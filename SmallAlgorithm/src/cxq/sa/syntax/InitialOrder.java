@@ -1,24 +1,26 @@
-package cxq.sa.test;
+package cxq.sa.syntax;
 
 
 
-	public class Test {
+	public class InitialOrder {
 		
 		public static int k=0;
-		public static Test t1=new Test("t1");
-		public static Test t2=new Test("t2");
+		public static InitialOrder t1=new InitialOrder("t1");
+		public static InitialOrder t2=new InitialOrder("t2");
 		public static int i=print("i");
 		public static int n=99;
 		
 		public int j=print("j");
+		
 		{
-			print("构造块");
-		}
-		static{
-			print("静态块");
+			print("构造块,new之后执行");
 		}
 		
-		public Test(String s){
+		static{
+			print("静态块，初始化器，类加载之后执行");
+		}
+		
+		public InitialOrder(String s){
 			System.out.println((++k)+"构造函数:"+s+" i="+i+" n="+n);
 			++i;++n;
 		}
@@ -34,7 +36,7 @@ package cxq.sa.test;
 		 * */
 		public static void main(String[] args){
 			System.out.println("----main start-------");
-			Test t=new Test("init");
+			InitialOrder t=new InitialOrder("init");
 			System.out.println("------main end-------");
 		}
 	}	
